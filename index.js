@@ -6,7 +6,6 @@ const cors = require('cors');
 const fs = require('fs');
 //read line module
 const readline = require('readline');
-const Database = require("@replit/database");
 //createServer(p1, p2) is a mutator method that returns an instance of the Server class which takes 2 paremeters 
 const server = http.createServer((request, response) => {
     // Enable CORS for all routes
@@ -35,7 +34,7 @@ const server = http.createServer((request, response) => {
                     if(err) throw err;
                 });
                 //test 1, sending data to requester
-                response.write(JSON.stringify({messageType: 'Welcome, this work in progress (REST API) was made by GabeM', value: 1}));
+                response.write(JSON.stringify({messageType: 'Secret DVHS Chat', value: 1}));
                 response.end();
             }
         } else if (request.url === "/") {
@@ -129,6 +128,7 @@ const server = http.createServer((request, response) => {
                         postIds.push(lines[i]);
                     } else if (i%5 == 3) {
                         dates.push(lines[i]);
+                        
                     }
                 }
                 //object array that will be sent to requester
