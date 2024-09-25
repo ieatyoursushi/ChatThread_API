@@ -34,7 +34,7 @@ const server = http.createServer((request, response) => {
                     if(err) throw err;
                 });
                 //test 1, sending data to requester
-                response.write(JSON.stringify({messageType: 'Secret DVHS Chat', value: 1}));
+                response.write(JSON.stringify({messageType: 'Freakstagram Chat Beta', value: 1}));
                 response.end();
             }
         } else if (request.url === "/") {
